@@ -15,6 +15,7 @@ namespace Exercise150917
         private Stock _stock = new Stock();
 
         List<Car> _cars = new List<Car>();
+        List<string> ColorCheck = new List<string>();
 
         public CarsInStock()
         {
@@ -44,7 +45,11 @@ namespace Exercise150917
             foreach (Car c in _cars)
             {
                 listBox1.Items.Add(c);
-                listBox2.Items.Add(c);
+                if (!ColorCheck.Contains(c.Color))
+                {
+                    listBox2.Items.Add(c);
+                    ColorCheck.Add(c.Color);
+                }
                 listBox2.DisplayMember = "Color";
             }
             listBox1.SelectedIndexChanged += new EventHandler((sender, e) =>
