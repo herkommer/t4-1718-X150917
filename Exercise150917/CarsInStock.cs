@@ -40,6 +40,11 @@ namespace Exercise150917
             textBox3.Enabled = false;
             textBox4.Enabled = false;
 
+            button1.Click += new EventHandler((sender, e) =>
+            {
+                DisplayMilage();
+            });
+
 
 
             foreach (Car c in _cars)
@@ -65,6 +70,16 @@ namespace Exercise150917
             });
         }
 
+        private void DisplayMilage()
+        {
+            MessageBox.Show(string.Format("We have {0} cars in stock, average milage is {1} km, " +
+                "the lowest milage is {2} km and the highest is {3} km ",
+                _cars.Count(),
+                _cars.Average(x => x.Milage),
+                _cars.Min(x => x.Milage),
+                _cars.Max(x => x.Milage)));
+        }
+
         private int ColorCount (Car c)
         {
             int answer;
@@ -72,6 +87,7 @@ namespace Exercise150917
             answer = _cars.Count(x => x.Color == string.Format("{0}", color));
             return answer;
         }
+
 
         
 
