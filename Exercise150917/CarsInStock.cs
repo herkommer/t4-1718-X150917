@@ -13,7 +13,7 @@ namespace Exercise150917
     public partial class CarsInStock : Form
     {
         private Stock _stock = new Stock();
-            
+
         public CarsInStock()
         {
             InitializeComponent();
@@ -26,15 +26,15 @@ namespace Exercise150917
             textBox3.Enabled = false;
             textBox4.Enabled = false;
             button1.Text = "Milage Data";
+            comboBox1.Text = "Colors";
 
             foreach (Car c in _stock.Cars)
             {
                 listBox1.Items.Add(c);
-
-                listBox2.Items.Add(c.Color);
+                if (!comboBox1.Items.Contains(c.Color))
+                    comboBox1.Items.Add(c.Color);
             }
 
-            
 
             listBox1.SelectedIndexChanged += new EventHandler((sender, e) =>
             {
@@ -46,9 +46,9 @@ namespace Exercise150917
                 textBox4.Text = string.Format("Milage: {0} km", c.Milage);
             });
 
-            listBox2.SelectedIndexChanged += new EventHandler((sender, e) =>
+            comboBox1.SelectedIndexChanged += new EventHandler((sender, e) =>
             {
-                string color = (string)listBox2.SelectedItem;
+                string color = (string)comboBox1.SelectedItem;
                 int counter = 0;
                 foreach (Car c in _stock.Cars)
                 {
