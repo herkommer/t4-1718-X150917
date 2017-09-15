@@ -10,10 +10,12 @@ namespace Exercise150917
     {
         public string Make { get; set; }
         public string Model { get; set; }
+        public string Color { get; set; }
+        public int Milage { get; set; }
 
         public override string ToString()
         {
-            return string.Format("{0} {1}", Make, Model);
+            return string.Format("{0} {1} {2} {3}", Make, Model, Color, Milage);
         }
     }
 
