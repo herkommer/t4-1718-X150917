@@ -33,6 +33,7 @@ namespace Exercise150917
             InitializeComponent();
 
             //Set-up form
+            button1.Text = "Display milage";
             Text = "Cars in stock";
 
             textBox1.Enabled = false;
@@ -52,10 +53,10 @@ namespace Exercise150917
                 listBox1.Items.Add(c);
                 if (!ColorCheck.Contains(c.Color))
                 {
-                    listBox2.Items.Add(c);
+                    comboBox1.Items.Add(c);
                     ColorCheck.Add(c.Color);
                 }
-                listBox2.DisplayMember = "Color";
+                comboBox1.DisplayMember = "Color";
             }
             listBox1.SelectedIndexChanged += new EventHandler((sender, e) =>
             {
@@ -63,9 +64,9 @@ namespace Exercise150917
                 Display(c);
             });
 
-            listBox2.SelectedIndexChanged += new EventHandler((sender, e) =>
+            comboBox1.SelectedIndexChanged += new EventHandler((sender, e) =>
             {
-                Car c = (Car)listBox2.SelectedItem;
+                Car c = (Car)comboBox1.SelectedItem;
                 MessageBox.Show(string.Format("We have {0} cars with {1} color in stock", ColorCount(c), c.Color));
             });
         }
