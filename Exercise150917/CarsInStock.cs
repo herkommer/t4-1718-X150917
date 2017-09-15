@@ -58,13 +58,18 @@ namespace Exercise150917
             listBox2.SelectedIndexChanged += new EventHandler((sender, e) =>
             {
                 Car c = (Car)listBox2.SelectedItem;
+                MessageBox.Show(string.Format("We have {0} {1} cars in stock", Count(c), c.Color));
             });
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private int Count(Car c)
         {
-            Car c = (Car)listBox1.SelectedItem;
-            Display(c);
+            int answer;
+            string color = c.Color;
+            answer = _cars.Count(x => x.Color == string.Format("{0}", color));
+            return answer;
         }
 
         private void Display(Car c)
