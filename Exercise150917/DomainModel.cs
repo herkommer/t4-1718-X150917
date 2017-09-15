@@ -10,6 +10,8 @@ namespace Exercise150917
     {
         public string Make { get; set; }
         public string Model { get; set; }
+        public string Color { get; set; }
+        public int Milage { get; set; }
 
         public override string ToString()
         {
