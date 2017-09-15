@@ -33,6 +33,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // listBox1
@@ -82,11 +83,23 @@
             this.textBox4.Size = new System.Drawing.Size(251, 26);
             this.textBox4.TabIndex = 4;
             // 
+            // listBox2
+            // 
+            this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 24;
+            this.listBox2.Location = new System.Drawing.Point(696, 20);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(383, 355);
+            this.listBox2.TabIndex = 5;
+            // 
             // CarsInStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 448);
+            this.ClientSize = new System.Drawing.Size(1093, 392);
+            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -107,5 +120,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }
