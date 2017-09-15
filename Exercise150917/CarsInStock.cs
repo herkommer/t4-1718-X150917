@@ -52,6 +52,7 @@ namespace Exercise150917
             listBox1.SelectedIndexChanged += new EventHandler((sender, e) =>
             {
                 Car c = (Car)listBox1.SelectedItem;
+                Display(c);
 
             }
             );
@@ -65,7 +66,7 @@ namespace Exercise150917
             button1.Click += new EventHandler((sender, e) =>
             {
                 MessageBox.Show(string.Format("We have {0} cars in stock average milage is {1} km, the lowest milage is {2} km and the highest is {3} km",
-                   _cars.Count(), _cars.Average(x => x.Milage), _cars.Min(x => x.Milage), _cars.Max(x => x.Milage));
+                   _cars.Count(), _cars.Average(x => x.Milage), _cars.Min(x => x.Milage), _cars.Max(x => x.Milage)));
             }
             );
         }
