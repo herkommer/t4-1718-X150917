@@ -33,19 +33,21 @@
             // 
             // btnOpenCarsInStock
             // 
-            this.btnOpenCarsInStock.Location = new System.Drawing.Point(23, 50);
+            this.btnOpenCarsInStock.Location = new System.Drawing.Point(15, 32);
+            this.btnOpenCarsInStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOpenCarsInStock.Name = "btnOpenCarsInStock";
-            this.btnOpenCarsInStock.Size = new System.Drawing.Size(231, 76);
+            this.btnOpenCarsInStock.Size = new System.Drawing.Size(154, 49);
             this.btnOpenCarsInStock.TabIndex = 0;
             this.btnOpenCarsInStock.Text = "button1";
             this.btnOpenCarsInStock.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.ClientSize = new System.Drawing.Size(185, 159);
             this.Controls.Add(this.btnOpenCarsInStock);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main";
             this.Text = "Main";
             this.ResumeLayout(false);
