@@ -27,6 +27,7 @@ namespace Exercise150917
         public Stock()
         {
             _cars = new List<Car>();
+            
         }
 
         public List<Car> Cars

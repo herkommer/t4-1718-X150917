@@ -43,6 +43,26 @@ namespace Exercise150917
             {
                 listBox1.Items.Add(c);
             }
+
+            listBox1.SelectedIndexChanged += new EventHandler((sender, e) =>
+              {
+                  Car c = (Car)listBox1.SelectedItem;
+              });
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Car c = (Car)listBox1.SelectedItem;
+            Display(c);
+        }
+
+        private void Display(Car c)
+        {
+            textBox1.Text = "Märke: " + c.Make;
+            textBox2.Text = "Modell: " + c.Model;
+            textBox3.Text = "Färg: " + c.Color;
+            textBox4.Text = "Mätarställning: " + c.Milage;
+
         }
     }
 }
