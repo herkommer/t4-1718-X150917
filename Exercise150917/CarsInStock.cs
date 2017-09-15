@@ -26,6 +26,10 @@ namespace Exercise150917
             textBox3.Enabled = false;
             textBox4.Enabled = false;
 
+            foreach (Car c in _stock.Cars)
+            {
+                listBox1.Items.Add(c);
+            }
         }
     }
 }
