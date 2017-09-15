@@ -25,6 +25,7 @@ namespace Exercise150917
             textBox2.Enabled = false;
             textBox3.Enabled = false;
             textBox4.Enabled = false;
+            button1.Text = "Milage Data";
 
             foreach (Car c in _stock.Cars)
             {
@@ -56,6 +57,11 @@ namespace Exercise150917
                 }
 
                 MessageBox.Show(string.Format("We have {0} {1} cars in stock", counter, color));
+            });
+
+            button1.Click += new EventHandler((sender, e) =>
+            {
+
             });
         }
     }
