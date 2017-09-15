@@ -43,7 +43,7 @@ namespace Exercise150917
                 textBox1.Text = "Make: " + c.Make;
                 textBox2.Text = "Model: " + c.Model;
                 textBox3.Text = "Color: " + c.Color;
-                textBox4.Text = string.Format("Milage: {0} miles", c.Milage);
+                textBox4.Text = string.Format("Milage: {0} km", c.Milage);
             });
 
             listBox2.SelectedIndexChanged += new EventHandler((sender, e) =>
@@ -61,7 +61,15 @@ namespace Exercise150917
 
             button1.Click += new EventHandler((sender, e) =>
             {
+                int carCount = _stock.Cars.Count;
+                double avg = _stock.Cars.Average(q => q.Milage);
+                int min = _stock.Cars.Min(q => q.Milage);
+                int max = _stock.Cars.Max(q => q.Milage);
 
+
+                
+                MessageBox.Show(string.Format("We have {0} cars in stock, average milage is {1} km, " +
+                    "the lowest milage is {2} km and the highest is {3} km.", carCount, avg, min, max));
             });
         }
     }
