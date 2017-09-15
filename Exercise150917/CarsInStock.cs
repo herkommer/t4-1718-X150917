@@ -32,6 +32,7 @@ namespace Exercise150917
 
             //Set-up form
             Text = "Cars in stock";
+            button1.Text = "Milage Data";
 
             textBox1.Enabled = false;
             textBox2.Enabled = false;
@@ -42,19 +43,40 @@ namespace Exercise150917
             {
                 listBox1.Items.Add(c);
             }
-
+            foreach (Car c in _cars)
+            {
+                listBox2.Items.Add(c);
+                listBox2.DisplayMember = "Color";
+            }
             listBox1.SelectedIndexChanged += new EventHandler((sender, e) =>
             { Car c = (Car)listBox1.SelectedItem;
 
             }
             );
+            listBox2.SelectedIndexChanged += new EventHandler((sender, e) =>
+            {
+                Car c = (Car)listBox2.SelectedItem;
+                MessageBox.Show(string.Format("We have {0} {1} cars in stock", colorBox(c), c.Color));
+            }
+            );
+
+            button1.Click += new EventHandler((sender, e) =>
+            {
+                MessageBox.Show(string.Format("We have {0} cars in stock, average milage is {1} km, the lowest milge is {2} km and the highest is {3} km",
+                   _cars.Count(), _cars.Average(x => x.Milage), _cars.Min(x => x.Milage), _cars.Max(x => x.Milage)
+                   ));
+            }
+            );
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private int colorBox(Car c)
         {
-            Car c = (Car)listBox1.SelectedItem;
-            Display(c);
+            int answer;
+            string color = c.Color;
+            answer = _cars.Count(x => x.Color == string.Format("{0}", color));
+            return answer; 
         }
+
 
         private void Display(Car c)
         {
