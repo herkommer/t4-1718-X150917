@@ -33,6 +33,7 @@ namespace Exercise150917
 
             //Set-up form
             Text = "Cars in stock";
+            button1.Text = "Mileage Data";
 
             textBox1.Enabled = false;
             textBox2.Enabled = false;
@@ -60,9 +61,16 @@ namespace Exercise150917
                 Car c = (Car)listBox2.SelectedItem;
                 MessageBox.Show(string.Format("We have {0} {1} cars in stock", Count(c), c.Color));
             });
+
+            button1.Click += new EventHandler((sender, e) =>
+              {
+                  MessageBox.Show(string.Format("We have {0} cars in stock,average mileage is {1} km, the lowest mileage is {2} km and the highest is {3} km.",
+                                                _cars.Count(),
+                                                _cars.Average(x=>x.Milage),
+                                                _cars.Min(x=>x.Milage),
+                                                _cars.Max(x=>x.Milage)));
+              });
         }
-
-
 
         private int Count(Car c)
         {
