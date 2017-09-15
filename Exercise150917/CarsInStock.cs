@@ -44,10 +44,21 @@ namespace Exercise150917
                 listBox1.Items.Add(c);
             }
 
+            foreach (Car c in _cars)
+            {
+                listBox2.Items.Add(c);
+                listBox2.DisplayMember = "Color";
+            }
+
             listBox1.SelectedIndexChanged += new EventHandler((sender, e) =>
               {
                   Car c = (Car)listBox1.SelectedItem;
               });
+
+            listBox2.SelectedIndexChanged += new EventHandler((sender, e) =>
+            {
+                Car c = (Car)listBox2.SelectedItem;
+            });
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
