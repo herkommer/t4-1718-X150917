@@ -43,9 +43,6 @@ namespace Exercise150917
             foreach (Car c in _cars)
             {
                 listBox1.Items.Add(c);
-            }
-            foreach (Car c in _cars)
-            {
                 listBox2.Items.Add(c);
                 listBox2.DisplayMember= "Color";
             }
@@ -64,9 +61,17 @@ namespace Exercise150917
 
             button1.Click += new EventHandler((sender, e) =>
             {
-            MessageBox.Show(string.Format("We have {0} cars in stock, average mileage is {1} km, the lowest mileage is {2} km and the highest is {3} km "
-                , _cars.Count(), _cars.Average(x => x.Milage), _cars.Min(x => x.Milage), _cars.Max(x => x.Milage) ));
+                DisplayMileage();
             });
+        }
+
+        private void DisplayMileage()
+        {
+            MessageBox.Show(string.Format("We have {0} cars in stock, average mileage is {1} km, the lowest mileage is {2} km and the highest is {3} km ",
+                _cars.Count(),
+                _cars.Average(x => x.Milage),
+                _cars.Min(x => x.Milage),
+                _cars.Max(x => x.Milage)));
         }
 
         private int ColorCount(Car c)
