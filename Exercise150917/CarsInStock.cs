@@ -31,6 +31,12 @@ namespace Exercise150917
                 listBox1.Items.Add(c);
             }
 
+            foreach (Car c in _stock.Cars)
+            {
+                listBox2.Items.Add(c);
+                listBox2.DisplayMember = "color";
+            }
+
             listBox1.SelectedIndexChanged += new EventHandler((sender, e) =>
             {
                 Car c = (Car)listBox1.SelectedItem;
@@ -39,6 +45,13 @@ namespace Exercise150917
                 textBox3.Text = "Color: " + c.Color;
                 textBox4.Text = "Milage: " + c.Milage;
             });
+
+            listBox2.SelectedIndexChanged += new EventHandler((sender, e) =>
+            {
+                Car c = (Car)listBox2.SelectedItem;
+                MessageBox.Show(String.Format("We have {0} {1}", _stock.Cars.Count(x => x.Color == String.Format("{0}", c.Color)), c.Color));
+            }
+           );
 
         }
     }
