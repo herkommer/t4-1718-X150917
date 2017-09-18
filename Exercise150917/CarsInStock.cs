@@ -27,7 +27,12 @@ namespace Exercise150917
             textBox4.Enabled = false;
 
             foreach (Car c in _stock.Cars)
+            {
                 listBox1.Items.Add(c);
+                listBox2.Items.Add(c.Color);
+                
+            }
+            
 
             listBox1.SelectedIndexChanged += new EventHandler((sender, e) => {
                 Car c = (Car)listBox1.SelectedItem;
@@ -35,6 +40,31 @@ namespace Exercise150917
                 textBox2.Text = "Model: " + c.Model;
                 textBox3.Text = "Color: " + c.Color;
                 textBox4.Text = "Milage: " + c.Milage;
+            });
+
+            listBox2.SelectedIndexChanged += new EventHandler((sender, e) => {
+
+                string carColor = (string)listBox2.SelectedItem;
+                int colorCounter = 0;
+
+                foreach(Car car in _stock.Cars)
+                {
+                    if (car.Color == carColor)
+                        colorCounter++;
+                }
+                MessageBox.Show(string.Format("There are {0} {1} cars in stock",colorCounter, carColor));
+
+            });
+
+            button1.Text = "Milage data";
+            
+            button1.Click += new EventHandler((sender, e) => {
+ 
+                MessageBox.Show(string.Format("We have {0} cars in stock, average milage {1} km, highest milage {2} km, lowest milage {3} km"
+                                    ,_stock.Cars.Count
+                                    ,_stock.Cars.Average(x => x.Milage)
+                                    ,_stock.Cars.Max(x => x.Milage)
+                                    ,_stock.Cars.Min(x => x.Milage)));
             });
         }
     }
