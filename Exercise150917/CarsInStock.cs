@@ -13,8 +13,7 @@ namespace Exercise150917
     public partial class CarsInStock : Form
     {
         private Stock _stock = new Stock();
-        List<Car> _cars = new List<Car>();
-
+        
         public CarsInStock()
         {
 
