@@ -14,7 +14,6 @@ namespace Exercise150917
     {
         private Stock _stock = new Stock();
 
-        List<Car> _stock.Cars = new List<Car>();
         List<string> colorCheck = new List<string>();
 
         public CarsInStock()
@@ -60,18 +59,13 @@ namespace Exercise150917
 
             button1.Click += new EventHandler((sender, e) =>
             {
-                displayMilage();
-            });
-        }
-
-        private void displayMilage()
-        {
-            MessageBox.Show(string.Format("We have {0} cars in stock, average milage is {1} km, the lowest milage is {2} km and the highest is {3} km ",
+                MessageBox.Show(string.Format("We have {0} cars in stock, average milage is {1} km, the lowest milage is {2} km and the highest is {3} km ",
                 _stock.Cars.Count(),
-                _stock.Cars.Average(x => x.Milage), 
-                _stock.Cars.Min(x => x.Milage), 
+                _stock.Cars.Average(x => x.Milage),
+                _stock.Cars.Min(x => x.Milage),
                 _stock.Cars.Max(x => x.Milage)
             ));
+            });
         }
 
         private int colorBox(Car c)
