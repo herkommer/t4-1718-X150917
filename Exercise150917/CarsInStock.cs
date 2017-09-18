@@ -17,16 +17,6 @@ namespace Exercise150917
 
         public CarsInStock()
         {
-            _cars.Add(new Car { Make = "Volvo", Model = "V70", Color = "Red", Milage = 1240 });
-            _cars.Add(new Car { Make = "Audi", Model = "A3", Color = "White", Milage = 34000 });
-            _cars.Add(new Car { Make = "Volvo", Model = "V70", Color = "Black", Milage = 505 });
-            _cars.Add(new Car { Make = "BMW", Model = "750", Color = "Green", Milage = 28500 });
-            _cars.Add(new Car { Make = "Skoda", Model = "Octavia", Color = "Red", Milage = 820 });
-            _cars.Add(new Car { Make = "Volvo", Model = "V60", Color = "Red", Milage = 12890 });
-            _cars.Add(new Car { Make = "Audi", Model = "Q3", Color = "Black", Milage = 22300 });
-            _cars.Add(new Car { Make = "BMW", Model = "328", Color = "White", Milage = 5500 });
-            _cars.Add(new Car { Make = "Volvo", Model = "V60", Color = "Black", Milage = 1402 });
-            _cars.Add(new Car { Make = "Opel", Model = "Ascona", Color = "Black", Milage = 6750 });
 
             InitializeComponent();
             button1.Text = "Milage data";
@@ -39,12 +29,12 @@ namespace Exercise150917
             textBox3.Enabled = false;
             textBox4.Enabled = false;
 
-            foreach (Car c in _cars)
+            foreach (Car c in _stock.Cars)
             {
                 listBox1.Items.Add(c);
             }
 
-            foreach (Car c in _cars)
+            foreach (Car c in _stock.Cars)
             {
                 listBox2.Items.Add(c);
                 listBox2.DisplayMember = "Color";
@@ -67,10 +57,10 @@ namespace Exercise150917
             {
                 MessageBox.Show(string.Format("We have {0} cars in stock, average milage is {1} km" +
                     ", the lowest milage is {2} km and the highest is {3} km."
-                    , _cars.Count()
-                    , _cars.Average(x => x.Milage)
-                    , _cars.Min(x => x.Milage)
-                    , _cars.Max(x => x.Milage)));
+                    , _stock.Cars.Count()
+                    , _stock.Cars.Average(x => x.Milage)
+                    , _stock.Cars.Min(x => x.Milage)
+                    , _stock.Cars.Max(x => x.Milage)));
             });
         }
 
@@ -79,7 +69,7 @@ namespace Exercise150917
         {
             int answer;
             string color = c.Color;
-            answer = _cars.Count(x => x.Color == string.Format("{0}", color));
+            answer = _stock.Cars.Count(x => x.Color == string.Format("{0}", color));
             return answer;
         }
 
