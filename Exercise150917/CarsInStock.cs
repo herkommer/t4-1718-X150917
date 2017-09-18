@@ -86,13 +86,13 @@ namespace Exercise150917
             answer = _cars.Count(x => x.Color == string.Format("{0}", color));
             return answer;
         }
-        
+
         private void Display(Car c)
         {
-                textBox1.Text = "Märke: " + c.Make;
-                textBox2.Text = "Modell: " + c.Model;
-                textBox3.Text = "Färg: " + c.Color;
-                textBox4.Text = "Mätarställning: " + c.Milage;
+            textBox1.Text = "Märke: " + c.Make;
+            textBox2.Text = "Modell: " + c.Model;
+            textBox3.Text = "Färg: " + c.Color;
+            textBox4.Text = "Mätarställning: " + c.Milage;
         }
     }
 }

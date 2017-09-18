@@ -45,7 +45,7 @@
             this.listBox1.Location = new System.Drawing.Point(21, 19);
             this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(367, 364);
+            this.listBox1.Size = new System.Drawing.Size(367, 316);
             this.listBox1.TabIndex = 0;
             // 
             // textBox1
@@ -96,7 +96,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 13;
+            this.comboBox1.ItemHeight = 24;
             this.comboBox1.Location = new System.Drawing.Point(413, 130);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(251, 21);
@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 392);
+            this.ClientSize = new System.Drawing.Size(684, 344);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox4);
