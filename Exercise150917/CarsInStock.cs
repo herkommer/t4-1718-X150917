@@ -29,8 +29,7 @@ namespace Exercise150917
             _cars.Add(new Car { Make = "Opel", Model = "Ascona", Color = "Black", Milage = 6750 });
 
             InitializeComponent();
-
-
+            button1.Text = "Milage data";
 
             //Set-up form
             Text = "Cars in stock";
@@ -49,9 +48,9 @@ namespace Exercise150917
             {
                 listBox2.Items.Add(c);
                 listBox2.DisplayMember = "Color";
-
             }
 
+            //EventHandelers
             listBox1.SelectedIndexChanged += new EventHandler((sender, e) =>
             {
                 Car c = (Car)listBox1.SelectedItem;
@@ -61,7 +60,7 @@ namespace Exercise150917
             listBox2.SelectedIndexChanged += new EventHandler((sender, e) =>
             {
                 Car c = (Car)listBox2.SelectedItem;
-                MessageBox.Show(string.Format("Vi har {0} {1} bilar i lager", ColorList(c), c.Color));
+                MessageBox.Show(string.Format("We have {0} {1} cars in stock!", ColorList(c), c.Color));
             });
 
             button1.Click += new EventHandler((sender, e) =>
@@ -75,6 +74,7 @@ namespace Exercise150917
             });
         }
 
+        //Listan bilarnas färger (höger)
         private int ColorList(Car c)
         {
             int answer;
@@ -83,12 +83,13 @@ namespace Exercise150917
             return answer;
         }
 
+        //Listan i mitten
         private void Display(Car c)
         {
-            textBox1.Text = "Märke: " + c.Make;
-            textBox2.Text = "Modell: " + c.Model;
-            textBox3.Text = "Färg: " + c.Color;
-            textBox4.Text = "Milantal: " + c.Milage;
+            textBox1.Text = "Make: " + c.Make;
+            textBox2.Text = "Model: " + c.Model;
+            textBox3.Text = "Color: " + c.Color;
+            textBox4.Text = "Milage: " + c.Milage;
         }
 
     }
