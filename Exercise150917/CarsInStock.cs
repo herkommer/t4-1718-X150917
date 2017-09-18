@@ -29,8 +29,8 @@ namespace Exercise150917
             foreach (Car c in _stock.Cars)
             {
                 listBox1.Items.Add(c);
+                if(!listBox2.Items.Contains(c.Color))
                 listBox2.Items.Add(c.Color);
-                
             }
             
 
@@ -60,7 +60,7 @@ namespace Exercise150917
             
             button1.Click += new EventHandler((sender, e) => {
  
-                MessageBox.Show(string.Format("We have {0} cars in stock, average milage {1} km, highest milage {2} km, lowest milage {3} km"
+                MessageBox.Show(string.Format("There are {0} cars in stock, average milage {1} km, highest milage {2} km, lowest milage {3} km"
                                     ,_stock.Cars.Count
                                     ,_stock.Cars.Average(x => x.Milage)
                                     ,_stock.Cars.Max(x => x.Milage)
