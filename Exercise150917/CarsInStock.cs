@@ -25,12 +25,14 @@ namespace Exercise150917
             textBox2.Enabled = false;
             textBox3.Enabled = false;
             textBox4.Enabled = false;
+            
+            comboBox1.Text = "Colors";
 
             foreach (Car c in _stock.Cars)
             {
                 listBox1.Items.Add(c);
-                if(!listBox2.Items.Contains(c.Color))
-                listBox2.Items.Add(c.Color);
+                if(!comboBox1.Items.Contains(c.Color))
+                comboBox1.Items.Add(c.Color);
             }
             
 
@@ -42,17 +44,22 @@ namespace Exercise150917
                 textBox4.Text = "Milage: " + c.Milage;
             });
 
-            listBox2.SelectedIndexChanged += new EventHandler((sender, e) => {
-
-                string carColor = (string)listBox2.SelectedItem;
+            comboBox1.SelectedIndexChanged += new EventHandler((sender, e) =>
+            {
+                string carColor = (string)comboBox1.SelectedItem;
                 int colorCounter = 0;
 
-                foreach(Car car in _stock.Cars)
+                foreach (Car car in _stock.Cars)
                 {
                     if (car.Color == carColor)
                         colorCounter++;
                 }
-                MessageBox.Show(string.Format("There are {0} {1} cars in stock",colorCounter, carColor));
+                MessageBox.Show(string.Format("There are {0} {1} cars in stock", colorCounter, carColor));
+            });
+
+            comboBox1.SelectedIndexChanged += new EventHandler((sender, e) => {
+
+                
 
             });
 
