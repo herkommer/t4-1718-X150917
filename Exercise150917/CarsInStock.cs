@@ -7,29 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+  
 namespace Exercise150917
 {
     public partial class CarsInStock : Form
     {
         private Stock _stock = new Stock();
 
-        List<Car> _cars = new List<Car>();
         List<string> ColorCheck = new List<string>();
         
         public CarsInStock()
         {
-            _cars.Add(new Car { Make = "Volvo", Model = "V70", Color = "Red", Milage = 1240 });
-            _cars.Add(new Car { Make = "Audi", Model = "A3", Color = "White", Milage = 34000 });
-            _cars.Add(new Car { Make = "Volvo", Model = "V70", Color = "Black", Milage = 505 });
-            _cars.Add(new Car { Make = "BMW", Model = "750", Color = "Green", Milage = 28500 });
-            _cars.Add(new Car { Make = "Skoda", Model = "Octavia", Color = "Red", Milage = 820 });
-            _cars.Add(new Car { Make = "Volvo", Model = "V60", Color = "Red", Milage = 12890 });
-            _cars.Add(new Car { Make = "Audi", Model = "Q3", Color = "Black", Milage = 22300 });
-            _cars.Add(new Car { Make = "BMW", Model = "328", Color = "White", Milage = 5500 });
-            _cars.Add(new Car { Make = "Volvo", Model = "V60", Color = "Black", Milage = 1402 });
-            _cars.Add(new Car { Make = "Opel", Model = "Ascona", Color = "Black", Milage = 6750 });
-
             InitializeComponent();
 
             //Set-up form
@@ -41,7 +29,7 @@ namespace Exercise150917
             textBox3.Enabled = false;
             textBox4.Enabled = false;
 
-            foreach (Car c in _cars)
+            foreach (Car c in _stock.Cars)
             {
                 listBox1.Items.Add(c);
                 if (!ColorCheck.Contains(c.Color))
@@ -66,24 +54,20 @@ namespace Exercise150917
 
             button1.Click += new EventHandler((sender, e) =>
             {
-                DisplayMileage();
+                MessageBox.Show(string.Format("We have {0} cars in stock, average mileage is {1} km, the lowest mileage is {2} km and the highest is {3} km ",
+                _stock.Cars.Count(),
+                _stock.Cars.Average(x => x.Milage),
+                _stock.Cars.Min(x => x.Milage),
+                _stock.Cars.Max(x => x.Milage)));
             });
         }
 
-        private void DisplayMileage()
-        {
-            MessageBox.Show(string.Format("We have {0} cars in stock, average mileage is {1} km, the lowest mileage is {2} km and the highest is {3} km ",
-                _cars.Count(),
-                _cars.Average(x => x.Milage),
-                _cars.Min(x => x.Milage),
-                _cars.Max(x => x.Milage)));
-        }
 
         private int ColorCount(Car c)
         {
             int answer;
             string color = c.Color;
-            answer = _cars.Count(x => x.Color == string.Format("{0}", color));
+            answer = _stock.Cars.Count(x => x.Color == string.Format("{0}", color));
             return answer;
         }
 
