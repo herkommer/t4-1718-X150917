@@ -26,6 +26,20 @@ namespace Exercise150917
             textBox3.Enabled = false;
             textBox4.Enabled = false;
 
+            foreach (Car c in _stock.Cars)
+            {
+                listBox1.Items.Add(c);
+            }
+
+            listBox1.SelectedIndexChanged += new EventHandler((sender, e) =>
+            {
+                Car c = (Car)listBox1.SelectedItem;
+                textBox1.Text = "Make: " + c.Make;
+                textBox2.Text = "Modell: " + c.Model;
+                textBox3.Text = "Color: " + c.Color;
+                textBox4.Text = "Milage: " + c.Milage;
+            });
+
         }
     }
 }
