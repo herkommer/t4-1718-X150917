@@ -1,0 +1,11 @@
+C:\Users\Admin\U15091701\t4-1718-X150917\Exercise150917\bin\Debug\Exercise150917.exe.config
+C:\Users\Admin\U15091701\t4-1718-X150917\Exercise150917\bin\Debug\Exercise150917.exe
+C:\Users\Admin\U15091701\t4-1718-X150917\Exercise150917\bin\Debug\Exercise150917.pdb
+C:\Users\Admin\U15091701\t4-1718-X150917\Exercise150917\obj\Debug\Exercise150917.csprojResolveAssemblyReference.cache
+C:\Users\Admin\U15091701\t4-1718-X150917\Exercise150917\obj\Debug\Exercise150917.CarsInStock.resources
+C:\Users\Admin\U15091701\t4-1718-X150917\Exercise150917\obj\Debug\Exercise150917.Main.resources
+C:\Users\Admin\U15091701\t4-1718-X150917\Exercise150917\obj\Debug\Exercise150917.Properties.Resources.resources
+C:\Users\Admin\U15091701\t4-1718-X150917\Exercise150917\obj\Debug\Exercise150917.csproj.GenerateResource.Cache
+C:\Users\Admin\U15091701\t4-1718-X150917\Exercise150917\obj\Debug\Exercise150917.csproj.CoreCompileInputs.cache
+C:\Users\Admin\U15091701\t4-1718-X150917\Exercise150917\obj\Debug\Exercise150917.exe
+C:\Users\Admin\U15091701\t4-1718-X150917\Exercise150917\obj\Debug\Exercise150917.pdb
